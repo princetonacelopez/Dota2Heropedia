@@ -11,7 +11,8 @@ import SwiftUI
 struct Dota2Heropedia: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(HeroesViewModel())
+            ContentView()
+                .environmentObject(HeroesViewModel())
         }
     }
 }

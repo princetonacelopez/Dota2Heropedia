@@ -9,15 +9,20 @@ import SwiftUI
 import Kingfisher
 
 struct ContentView: View {
-    @ObservedObject var viewModel = HeroesViewModel()
+    @EnvironmentObject var viewModel : HeroesViewModel
     
     var body: some View {
         NavigationView {
-            List(viewModel.heroes) {
-                HeroView(hero: $0 , viewModel: viewModel)
-            }
-            .onAppear {
-                self.viewModel.fetchHeroes()
+            VStack {
+                SearchView()
+                List(viewModel.filteredList) { hero in
+                    HeroView(hero: hero, viewModel: viewModel)
+                    
+                }
+                .listStyle(GroupedListStyle())
+                .onAppear {
+                    self.viewModel.fetchHeroes()
+                }
             }
             .navigationBarTitle(Text("Heropedia"))
         }
