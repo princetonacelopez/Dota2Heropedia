@@ -19,13 +19,13 @@ struct HeroView: View {
     
     var body: some View {
         HStack {
-            KFImage(URL(string: "https://api.opendota.com\(hero.icon!)"))
+            KFImage(URL(string: "https://api.opendota.com\(hero.icon)"))
             
             VStack(alignment: .leading) {
-                Text(hero.localized_name!)
+                Text(hero.localized_name)
                     .font(.title3)
                     .bold()
-                Text(hero.attack_type!)
+                Text(hero.attack_type)
                     .font(.subheadline)
                     .italic()
                     .foregroundColor(.gray)

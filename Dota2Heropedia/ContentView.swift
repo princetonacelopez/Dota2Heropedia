@@ -14,12 +14,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.heroes) {
-                HeroView(hero: $0, viewModel: viewModel)
+                HeroView(hero: $0 , viewModel: viewModel)
             }
-            .navigationBarTitle(Text("Heropedia"))
             .onAppear {
                 self.viewModel.fetchHeroes()
             }
+            .navigationBarTitle(Text("Heropedia"))
         }
     }
 }

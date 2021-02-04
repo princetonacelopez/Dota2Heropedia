@@ -9,11 +9,12 @@ import SwiftUI
 import Combine
 
 class HeroesViewModel: ObservableObject {
+    
     private var url = "https://api.opendota.com/api/heroStats"
     private var task: AnyCancellable?
-    
+
     @Published var heroes: [Hero] = []
-    
+
     func fetchHeroes() {
         task = URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
             .map { $0.data }
