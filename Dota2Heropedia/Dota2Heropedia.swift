@@ -1,6 +1,6 @@
 //
-//  DotaApp.swift
-//  Dota
+//  Dota2Heropedia.swift
+//  Dota2Heropedia
 //
 //  Created by Princeton Ace Lopez on 2/1/21.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct DotaApp: App {
+struct Dota2Heropedia: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(HeroesViewModel())
         }
     }
 }

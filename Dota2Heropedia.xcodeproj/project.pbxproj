@@ -3,23 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46D8B02725C7EA9800F9D92E /* DotaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B02625C7EA9800F9D92E /* DotaApp.swift */; };
+		4681D21F25CA8EBC007F738A /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681D21E25CA8EBC007F738A /* HeroView.swift */; };
+		4681D22325CA903F007F738A /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681D22225CA903F007F738A /* HeroesViewModel.swift */; };
+		46D8B02725C7EA9800F9D92E /* Dota2Heropedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B02625C7EA9800F9D92E /* Dota2Heropedia.swift */; };
 		46D8B02925C7EA9800F9D92E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B02825C7EA9800F9D92E /* ContentView.swift */; };
 		46D8B02B25C7EA9900F9D92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D8B02A25C7EA9900F9D92E /* Assets.xcassets */; };
 		46D8B02E25C7EA9900F9D92E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D8B02D25C7EA9900F9D92E /* Preview Assets.xcassets */; };
+		46D8B03825C7EAD000F9D92E /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B03725C7EAD000F9D92E /* HeroModel.swift */; };
+		46D8B04525C8157400F9D92E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 46D8B04425C8157400F9D92E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46D8B02325C7EA9800F9D92E /* Dota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		46D8B02625C7EA9800F9D92E /* DotaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaApp.swift; sourceTree = "<group>"; };
+		4681D21E25CA8EBC007F738A /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		4681D22225CA903F007F738A /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		46D8B02325C7EA9800F9D92E /* Dota2Heropedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Heropedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D8B02625C7EA9800F9D92E /* Dota2Heropedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2Heropedia.swift; sourceTree = "<group>"; };
 		46D8B02825C7EA9800F9D92E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46D8B02A25C7EA9900F9D92E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46D8B02D25C7EA9900F9D92E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46D8B02F25C7EA9900F9D92E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D8B03725C7EAD000F9D92E /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,16 +34,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D8B04525C8157400F9D92E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4681D22125CA901D007F738A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4681D22225CA903F007F738A /* HeroesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		46D8B01A25C7EA9700F9D92E = {
 			isa = PBXGroup;
 			children = (
-				46D8B02525C7EA9800F9D92E /* Dota */,
+				46D8B02525C7EA9800F9D92E /* Dota2Heropedia */,
 				46D8B02425C7EA9800F9D92E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,21 +60,24 @@
 		46D8B02425C7EA9800F9D92E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46D8B02325C7EA9800F9D92E /* Dota.app */,
+				46D8B02325C7EA9800F9D92E /* Dota2Heropedia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46D8B02525C7EA9800F9D92E /* Dota */ = {
+		46D8B02525C7EA9800F9D92E /* Dota2Heropedia */ = {
 			isa = PBXGroup;
 			children = (
-				46D8B02625C7EA9800F9D92E /* DotaApp.swift */,
+				46D8B02625C7EA9800F9D92E /* Dota2Heropedia.swift */,
 				46D8B02825C7EA9800F9D92E /* ContentView.swift */,
+				46DE1AB225C9920500D844FC /* View */,
+				4681D22125CA901D007F738A /* ViewModel */,
+				46D8B03625C7EAB100F9D92E /* Model */,
 				46D8B02A25C7EA9900F9D92E /* Assets.xcassets */,
-				46D8B02F25C7EA9900F9D92E /* Info.plist */,
 				46D8B02C25C7EA9900F9D92E /* Preview Content */,
+				46D8B02F25C7EA9900F9D92E /* Info.plist */,
 			);
-			path = Dota;
+			path = Dota2Heropedia;
 			sourceTree = "<group>";
 		};
 		46D8B02C25C7EA9900F9D92E /* Preview Content */ = {
@@ -69,12 +88,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		46D8B03625C7EAB100F9D92E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46D8B03725C7EAD000F9D92E /* HeroModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46DE1AB225C9920500D844FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4681D21E25CA8EBC007F738A /* HeroView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46D8B02225C7EA9800F9D92E /* Dota */ = {
+		46D8B02225C7EA9800F9D92E /* Dota2Heropedia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46D8B03225C7EA9900F9D92E /* Build configuration list for PBXNativeTarget "Dota" */;
+			buildConfigurationList = 46D8B03225C7EA9900F9D92E /* Build configuration list for PBXNativeTarget "Dota2Heropedia" */;
 			buildPhases = (
 				46D8B01F25C7EA9800F9D92E /* Sources */,
 				46D8B02025C7EA9800F9D92E /* Frameworks */,
@@ -84,9 +119,12 @@
 			);
 			dependencies = (
 			);
-			name = Dota;
+			name = Dota2Heropedia;
+			packageProductDependencies = (
+				46D8B04425C8157400F9D92E /* Kingfisher */,
+			);
 			productName = Dota;
-			productReference = 46D8B02325C7EA9800F9D92E /* Dota.app */;
+			productReference = 46D8B02325C7EA9800F9D92E /* Dota2Heropedia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46D8B01E25C7EA9700F9D92E /* Build configuration list for PBXProject "Dota" */;
+			buildConfigurationList = 46D8B01E25C7EA9700F9D92E /* Build configuration list for PBXProject "Dota2Heropedia" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,11 +150,14 @@
 				Base,
 			);
 			mainGroup = 46D8B01A25C7EA9700F9D92E;
+			packageReferences = (
+				46D8B04325C8157400F9D92E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 46D8B02425C7EA9800F9D92E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46D8B02225C7EA9800F9D92E /* Dota */,
+				46D8B02225C7EA9800F9D92E /* Dota2Heropedia */,
 			);
 		};
 /* End PBXProject section */
@@ -139,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46D8B02925C7EA9800F9D92E /* ContentView.swift in Sources */,
-				46D8B02725C7EA9800F9D92E /* DotaApp.swift in Sources */,
+				4681D21F25CA8EBC007F738A /* HeroView.swift in Sources */,
+				46D8B02725C7EA9800F9D92E /* Dota2Heropedia.swift in Sources */,
+				46D8B03825C7EAD000F9D92E /* HeroModel.swift in Sources */,
+				4681D22325CA903F007F738A /* HeroesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,16 +312,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Dota/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Dota2Heropedia/Preview Content\"";
 				DEVELOPMENT_TEAM = 454Z2KDRQQ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Dota/Info.plist;
+				INFOPLIST_FILE = Dota2Heropedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.princetonacelopez.Dota;
+				PRODUCT_BUNDLE_IDENTIFIER = com.princetonacelopez.Dota2Heropedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -290,16 +334,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Dota/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Dota2Heropedia/Preview Content\"";
 				DEVELOPMENT_TEAM = 454Z2KDRQQ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Dota/Info.plist;
+				INFOPLIST_FILE = Dota2Heropedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.princetonacelopez.Dota;
+				PRODUCT_BUNDLE_IDENTIFIER = com.princetonacelopez.Dota2Heropedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46D8B01E25C7EA9700F9D92E /* Build configuration list for PBXProject "Dota" */ = {
+		46D8B01E25C7EA9700F9D92E /* Build configuration list for PBXProject "Dota2Heropedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46D8B03025C7EA9900F9D92E /* Debug */,
@@ -318,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46D8B03225C7EA9900F9D92E /* Build configuration list for PBXNativeTarget "Dota" */ = {
+		46D8B03225C7EA9900F9D92E /* Build configuration list for PBXNativeTarget "Dota2Heropedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46D8B03325C7EA9900F9D92E /* Debug */,
@@ -328,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46D8B04325C8157400F9D92E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46D8B04425C8157400F9D92E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46D8B04325C8157400F9D92E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46D8B01B25C7EA9700F9D92E /* Project object */;
 }
