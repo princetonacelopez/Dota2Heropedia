@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct SearchView: View {
-    @EnvironmentObject var viewModel: HeroesViewModel
-    
+    @Binding var search: String
+    @Binding var buttonSearch: Bool
     var body: some View {
         HStack {
-            TextField("Search a hero", text: $viewModel.searchHero, onCommit: {
-                viewModel.searchHeroes(hero: viewModel.searchHero)
-            })
+            TextField("Search a hero", text: $search)
+                .font(.body)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
             Button(action: {
-                viewModel.searchHeroes(hero: viewModel.searchHero)
+                buttonSearch.toggle()
             }, label: {
                 Image(systemName: "magnifyingglass")
                     .font(.title)
                     .foregroundColor(.red)
             })
+            .disabled(!search.isEmpty ? false :  true)
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(search: .constant(""), buttonSearch: .constant(false))
     }
 }

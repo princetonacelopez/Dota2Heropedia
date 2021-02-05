@@ -8,41 +8,31 @@
 import SwiftUI
 import Combine
 
-class HeroesViewModel: ObservableObject {
+final class HeroesViewModel: ObservableObject {
+    @Published var heroes = [Hero]()
     
-    private var url = "https://api.opendota.com/api/heroStats"
-    private var task: AnyCancellable?
-
-    @Published var heroes: [Hero] = []
-    
-    @Published var search: String? = nil
-    
-    @Published var searchHero: String = "" {
-        didSet {
-            searchHeroes(hero: searchHero)
+    let remoteDataPublisher = URLSession.shared.dataTaskPublisher(for: URL(string: "https://api.opendota.com/api/heroStats")!)
+        .tryMap { (data, response)  in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw URLError(.badServerResponse)
+            }
+            return data
         }
+        .decode(type: [Hero].self, decoder: JSONDecoder())
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        fetchHeroes()
     }
-    //fetching the data from the api
+    
     func fetchHeroes() {
-        task = URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
-            .map { $0.data }
-            .decode(type: [Hero].self, decoder: JSONDecoder())
-            .replaceError(with: [])
-            .eraseToAnyPublisher()
-            .receive(on: RunLoop.main)
-            .assign(to: \HeroesViewModel.heroes, on: self)
-    }
-    //filter list
-    var filteredList: [Hero] {
-        if let search = search {
-            return heroes.filter({ $0.localized_name.contains(search)})
-        } else {
-            return heroes
-        }
-    }
-    //hero search
-    func searchHeroes(hero: String) {
-        let heroSearch = hero.trimmingCharacters(in: .whitespaces)
-        search = heroSearch == "" ? nil : heroSearch
+        remoteDataPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in }, receiveValue: { heroes in
+                self.heroes = heroes
+            })
+            .store(in: &cancellables)
+        
     }
 }

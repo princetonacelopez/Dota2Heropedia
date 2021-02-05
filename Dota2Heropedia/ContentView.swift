@@ -9,20 +9,36 @@ import SwiftUI
 import Kingfisher
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel : HeroesViewModel
+    @StateObject var viewModel = HeroesViewModel()
+    @State private var search = ""
+    @State private var buttonSearch: Bool = false
+    
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchView()
-                List(viewModel.filteredList) { hero in
-                    HeroView(hero: hero, viewModel: viewModel)
-                    
-                }
-                .listStyle(GroupedListStyle())
-                .onAppear {
-                    self.viewModel.fetchHeroes()
-                }
+                SearchView(search: $search, buttonSearch: $buttonSearch)
+                FilterHero()
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        if buttonSearch && !search.isEmpty {
+                            ForEach(viewModel.heroes.filter({ $0.localized_name.contains(search)})) { hero in
+                                HeroItem(hero: hero)
+                            }
+                        }
+                        else {
+                            ForEach(viewModel.heroes) { hero in
+                                HeroItem(hero: hero)
+                            }
+                            .onAppear {
+                                buttonSearch = false
+                            }
+                        }
+                    }
+                    .padding()
+                }.id(UUID().uuidString)
+                .edgesIgnoringSafeArea(.all)
             }
             .navigationBarTitle(Text("Heropedia"))
         }

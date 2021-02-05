@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4681D21F25CA8EBC007F738A /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681D21E25CA8EBC007F738A /* HeroView.swift */; };
+		4681D21F25CA8EBC007F738A /* HeroItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681D21E25CA8EBC007F738A /* HeroItem.swift */; };
 		4681D22325CA903F007F738A /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681D22225CA903F007F738A /* HeroesViewModel.swift */; };
+		469C1E3625CD537700150AE1 /* FilterHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C1E3525CD537700150AE1 /* FilterHero.swift */; };
+		469C1E3925CD59DD00150AE1 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C1E3825CD59DD00150AE1 /* Chip.swift */; };
 		46D8B02725C7EA9800F9D92E /* Dota2Heropedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B02625C7EA9800F9D92E /* Dota2Heropedia.swift */; };
 		46D8B02925C7EA9800F9D92E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8B02825C7EA9800F9D92E /* ContentView.swift */; };
 		46D8B02B25C7EA9900F9D92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D8B02A25C7EA9900F9D92E /* Assets.xcassets */; };
@@ -19,8 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4681D21E25CA8EBC007F738A /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		4681D21E25CA8EBC007F738A /* HeroItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroItem.swift; sourceTree = "<group>"; };
 		4681D22225CA903F007F738A /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		469C1E3525CD537700150AE1 /* FilterHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHero.swift; sourceTree = "<group>"; };
+		469C1E3825CD59DD00150AE1 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
 		46D8B02325C7EA9800F9D92E /* Dota2Heropedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Heropedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D8B02625C7EA9800F9D92E /* Dota2Heropedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2Heropedia.swift; sourceTree = "<group>"; };
 		46D8B02825C7EA9800F9D92E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,8 +105,10 @@
 		46DE1AB225C9920500D844FC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4681D21E25CA8EBC007F738A /* HeroView.swift */,
 				46F3DCD425CC2EA500516E10 /* SearchView.swift */,
+				469C1E3525CD537700150AE1 /* FilterHero.swift */,
+				4681D21E25CA8EBC007F738A /* HeroItem.swift */,
+				469C1E3825CD59DD00150AE1 /* Chip.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46D8B02925C7EA9800F9D92E /* ContentView.swift in Sources */,
-				4681D21F25CA8EBC007F738A /* HeroView.swift in Sources */,
+				469C1E3925CD59DD00150AE1 /* Chip.swift in Sources */,
+				469C1E3625CD537700150AE1 /* FilterHero.swift in Sources */,
+				4681D21F25CA8EBC007F738A /* HeroItem.swift in Sources */,
 				46D8B02725C7EA9800F9D92E /* Dota2Heropedia.swift in Sources */,
 				46F3DCD525CC2EA500516E10 /* SearchView.swift in Sources */,
 				46D8B03825C7EAD000F9D92E /* HeroModel.swift in Sources */,
